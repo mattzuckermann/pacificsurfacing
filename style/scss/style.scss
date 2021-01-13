@@ -1,0 +1,140 @@
+html,
+body {
+  /* Colors */
+  --black: #0f0e17;
+  --white: #fffffe;
+  --grey: #a7a9be;
+  --yellow: #ff8906;
+  --orange: #f25f4c;
+  --red: #f50157;
+  --pink: #e53170;
+  --blue: #4494c2;
+
+  /* Intentions */
+  --backgroundColor: var(--black);
+  --textColor: var(--white);
+
+  /* Layout */
+  --headerHeight: 3.5rem;
+  --containerPadding: 2.5vw;
+  --headerBackground: rgba(17, 15, 24, 0.4);
+  --footerBackground: rgba(17, 15, 24, 0.2);
+
+  /* Elevation */
+  --level-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --level-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --level-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --level-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  background-color: var(--backgroundColor);
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  color: var(--textColor);
+}
+header {
+  position: absolute;
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--headerHeight);
+  width: 100%;
+  z-index: 2;
+  background-color: var(--headerBackground);
+  box-shadow: var(--level-3);
+  padding: 0px var(--containerPadding);
+  nav {
+    display: flex;
+    align-items: center;
+    a {
+      padding: 1px 4px;
+      color: white;
+      text-decoration: none;
+      background-image: linear-gradient(
+        180deg,
+        transparent 75%,
+        var(--orange) 0
+      );
+      &:hover {
+        background-image: linear-gradient(
+          180deg,
+          transparent 0%,
+          var(--orange) 0
+        );
+        color: var(--black);
+        transition: linear 0.1s;
+      }
+      + a {
+        margin-left: 35px;
+      }
+    }
+  }
+}
+
+main {
+  padding: 0px var(--containerPadding);
+}
+
+footer {
+  position: absolute;
+  background-color: var(--footerBackground);
+  color: var(--textColor);
+  box-shadow: var(--level-3);
+  height: 3rem;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-background {
+  background-image: url("../../public/homeBackground.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  z-index: 10;
+}
+
+.layout {
+  padding: 0 var(--containerPadding);
+}
+
+.mainLogo {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logoMainLine {
+  display: flex;
+  justify-content: center;
+}
+
+.logoSubLine {
+  display: flex;
+  align-items: center;
+  img + img {
+    padding-left: 15px;
+  }
+}
+
+.logoMainLine + .logoSubLine {
+  padding: 12px 0px 0px 0px;
+}
